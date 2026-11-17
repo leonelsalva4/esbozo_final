@@ -1,7 +1,7 @@
 {
   "version": "ESB-ENTREGA-20261117",
   "tag": "entrega-2026-11-17",
-  "codeManifestSha256": "ea9e1a741e5c22159c6d68414c70a0cdbf78d0e0fb929f157bb640361ee36f11",
+  "codeManifestSha256": "002f0e8912770b8a704552f919269dd3f169751178d6ab16194f930678253b1c",
   "files": {
     ".gitattributes": "a5662b95f905ea6e4082bc28d1735b10d33cca690c5604e6b587d747ec841990",
     ".github/workflows/verify.yml": "d292aec90fcc220b7a981d5649d18a5b0fa1353d1b556f0b3d29e5d902a8e5c2",
@@ -35,7 +35,7 @@
     "backend/scripts/import-complete-results.mjs": "0bb7f01948e8ec65ab85b832b9c90337ed48273191a6ad765a4aa664a728278a",
     "backend/scripts/import-results.mjs": "b43bb2bfff2e27d8dea9f8e17c339e7257b97abe9a24e0b3428d380cf02f7c80",
     "backend/scripts/migrate.mjs": "9d57813fe72e04b10604d55c2f0528adb51091c82082c250fd9a8a83cec1cd44",
-    "backend/scripts/postgres-tools.mjs": "890716766c6cacc2570358d27b1ccafcd970f930de4e5425dd88a03aad2a3046",
+    "backend/scripts/postgres-tools.mjs": "b1016badd667258266eeee5cea6fb24d6b2f84d6fe0fa68ad600d76a1ce9dedc",
     "backend/scripts/provision-admin.mjs": "7a14ddcdc9941a9824485038ccecc4a9c7a66444554c2b83c79c37fa4cbd2b9c",
     "backend/scripts/restore-installation.mjs": "e98af8655fce73b5c34a9792b8787b8c0be9b32e71e3dfcaa93d39269e16c9b8",
     "backend/scripts/validate-package.mjs": "f735489e0b20fd8d3cd236ef79e1ed9a063fbaa1d089636933be64bdd4acc0c5",

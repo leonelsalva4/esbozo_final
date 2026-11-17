@@ -9,7 +9,7 @@ export function postgresTool(name, options = {}) {
   const env = options.env ?? process.env;
   const exists = options.exists ?? existsSync;
   const list = options.list ?? readdirSync;
-  const paths = platform === 'win32' ? path.win32 : path;
+  const paths = platform === 'win32' ? path.win32 : path.posix;
   const executable = name + (platform === 'win32' ? '.exe' : '');
   if (env.PG_BIN_DIR) {
     const target = paths.join(env.PG_BIN_DIR, executable);
