@@ -1,0 +1,351 @@
+/* Valores tomados directo del archivo de Figma (node 2006:66 "Inicio de
+   Sesión", 1648×1030) vía el conector de diseño — no son aproximaciones a
+   ojo. Todo tamaño/posición se expresa en vw a partir de "px original /
+   1648 * 100", así la proporción se mantiene igual sin importar el tamaño
+   de la ventana, en vez de quedar fija a un solo tamaño de pantalla. */
+
+.login-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  background: #fbf7ee;
+  font-family: "Inter", sans-serif;
+}
+
+/* ── Panel identidad (izquierda) ─────────────────────────────────────── */
+
+.panel-identidad {
+  position: relative;
+  flex: 0 0 59.59%;
+  height: 100%;
+  overflow: hidden;
+  background: #f5efe2;
+}
+
+.fachada {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 87.4%;
+  height: 87.4%;
+  overflow: hidden;
+}
+
+.pano {
+  position: absolute;
+}
+
+/* box-shadow con el mismo color de cada pano, sin blur ni offset:
+   "engorda" 1px la barra sin mover su posición real, y tapa la línea de
+   subpíxel que a veces se ve entre barras contiguas por redondeo del
+   navegador al pintar cada una con su propio porcentaje. */
+.pano-1 { left: -2.78%; top: 18.8%;  width: 20.83%; height: 85.54%; background: #c2685d; box-shadow: 0 0 0 1px #c2685d; }
+.pano-2 { left: 18.06%; top: 11.86%; width: 16.39%; height: 92.47%; background: #f2c24e; box-shadow: 0 0 0 1px #f2c24e; }
+.pano-3 { left: 34.45%; top: 26.89%; width: 13.34%; height: 77.45%; background: #84bacb; box-shadow: 0 0 0 1px #84bacb; }
+.pano-4 { left: 47.78%; top: 17.64%; width: 18.33%; height: 86.69%; background: #a0bfac; box-shadow: 0 0 0 1px #a0bfac; }
+.pano-5 { left: 66.11%; top: 32.66%; width: 14.44%; height: 71.67%; background: #7b4f4d; box-shadow: 0 0 0 1px #7b4f4d; }
+.pano-6 { left: 80.56%; top: 22.26%; width: 22.22%; height: 82.07%; background: #d9862f; box-shadow: 0 0 0 1px #d9862f; }
+
+/* "Luz sobre Pano" en Figma: un glaseado blanco translúcido sólo sobre
+   los panos 2 y 4, mismas coordenadas que el pano que iluminan. */
+.luz-2 { left: 18.06%; top: 11.86%; width: 16.39%; height: 92.47%; background: rgba(251, 247, 238, 0.2); }
+.luz-4 { left: 47.78%; top: 17.64%; width: 18.33%; height: 86.69%; background: rgba(251, 247, 238, 0.2); }
+
+/* "Acanalado": en Figma son 50 líneas verticales individuales cada
+   14.3px. Un repeating-linear-gradient reproduce el mismo patrón exacto
+   (mismo ancho de línea, mismo paso, mismo color) sin 50 elementos. */
+.nervadura {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(58, 42, 32, 0.17) 0 12.5%,
+    transparent 12.5% 100%
+  );
+  background-size: 1.667% 100%;
+}
+
+.fade-top {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 29.39%;
+  background: linear-gradient(to bottom, #f5efe2 0%, rgba(245, 239, 226, 0) 100%);
+}
+
+.fade-bottom {
+  position: absolute;
+  left: 0;
+  top: 39.55%;
+  width: 100%;
+  height: 62.45%;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 239, 226, 0) 0%,
+    rgba(245, 239, 226, 0.66) 38%,
+    rgba(245, 239, 226, 0.95) 66%,
+    rgb(245, 239, 226) 100%
+  );
+}
+
+/* Wordmark + divisor + tagline van agrupados con flex y un gap explícito
+   en vez de tres "top" independientes en %: si la ventana no tiene
+   exactamente la proporción del diseño original (1648:1030), porcentajes
+   de alto y tamaños en vw (relativos al ancho) se desalinean entre sí.
+   Con flex+gap, quedan siempre separados por la misma distancia real,
+   sin importar el tamaño de la ventana. */
+.identidad-footer {
+  position: absolute;
+  left: 10.29%;
+  right: 22%;
+  top: 53.31%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tagline {
+  margin: 0.9vw 0 0;
+  font-weight: 700;
+  font-size: 1.232vw;
+  line-height: 1.35;
+  color: #2a2a2a;
+}
+
+.divider {
+  margin-top: 0.6vw;
+  height: 0.744vw;
+  display: flex;
+}
+.divider span { flex: 1; height: 100%; }
+.divider span:nth-child(1) { background: #e2a84b; }
+.divider span:nth-child(2) { background: #c45a43; }
+.divider span:nth-child(3) { background: #7ca4b8; }
+.divider span:nth-child(4) { background: #8fa185; }
+
+.wordmark-frame {
+  /* El asset original es más grande que su marco visible en Figma: la
+     imagen se recorta y reposiciona dentro de este marco (aspect-ratio
+     407:136), no se muestra completa. */
+  aspect-ratio: 407 / 136;
+  overflow: hidden;
+  position: relative;
+}
+
+.wordmark-frame img {
+  position: absolute;
+  width: 119.57%;
+  height: 268.38%;
+  left: -11.86%;
+  top: -84.4%;
+  max-width: none;
+}
+
+/* ── Panel acceso (derecha) ──────────────────────────────────────────── */
+
+.panel-acceso {
+  position: relative;
+  flex: 0 0 48.3%;
+  margin-left: -7.52%; /* reproduce el solape real: en Figma "Panel acceso"
+                           arranca exactamente donde termina la fachada */
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee1c3;
+}
+
+.panel-acceso::before {
+  /* "Fibra": textura de papel — 300 líneas horizontales individuales en
+     Figma (rgba(101,62,61,0.03) cada ~3px). Mismo patrón vía gradiente. */
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    180deg,
+    rgba(101, 62, 61, 0.03) 0 33%,
+    transparent 33% 100%
+  );
+  background-size: 100% 0.29%;
+}
+
+.top-accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0.35vw;
+  background: #d4a03d;
+}
+
+.left-border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(101, 62, 61, 0.2);
+}
+
+.login-card {
+  /* Alto automático (según contenido), centrada por el flex del panel:
+     con un alto fijo en % de la altura de ventana, si la proporción de
+     la ventana no coincide con la del diseño original, el contenido
+     (dimensionado en vw, relativo al ancho) no entraba — cortaba el
+     botón y ocultaba el pie. Así siempre entra todo, sin importar el
+     tamaño de la ventana. */
+  position: relative;
+  width: 66%;
+  background: #f7f3e9;
+  border: 1px solid #dcd7c9;
+  border-radius: 0.8vw;
+  box-shadow: 0 1.33vw 3.32vw rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.7vw 0 3vw; /* abajo (pie "¿Sin acceso?") queda como estaba, sólo se ajustó arriba */
+  box-sizing: border-box;
+}
+
+.logo-mark {
+  width: 10.5vw;
+  height: auto;
+  margin-bottom: 0.6vw;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-left: 8.37%; /* alinea con el borde izquierdo del formulario/descripción */
+  gap: 0.5vw;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 700;
+  font-size: 0.757vw;
+  letter-spacing: 0.16em;
+  color: #653e3d;
+  margin-bottom: 0.9vw;
+}
+.eyebrow img { width: 1.4vw; height: auto; }
+
+.login-title {
+  margin: 0;
+  font-family: "Source Serif 4", serif;
+  font-weight: 400;
+  font-size: 2.96vw;
+  color: #2f343a;
+  text-align: center;
+}
+
+.card-padded {
+  width: 100%;
+  padding: 0 8.37%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description {
+  margin: 0.9vw 0 2vw;
+  font-size: 0.93vw;
+  line-height: 1.36;
+  color: #2f343a;
+  text-align: center;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.33vw;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.6vw;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 500;
+  font-size: 0.878vw;
+  letter-spacing: 0.05em;
+  color: #653e3d;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  height: 3.32vw;
+  border: 1px solid #dcd7c9;
+  border-radius: 0.53vw;
+  background: #fbf9f4;
+}
+
+.input-wrap svg {
+  flex: 0 0 auto;
+  width: 1.1vw;
+  height: 1.1vw;
+  color: #6b675b;
+  margin: 0 0.9vw;
+}
+
+.input-wrap input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  border-left: 1px solid #dcd7c9;
+  background: transparent;
+  padding: 0 0.9vw;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95vw;
+  color: #2f343a;
+  outline: none;
+}
+
+.input-wrap button.toggle-visibility {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6vw;
+  height: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b675b;
+}
+.input-wrap button.toggle-visibility svg { margin: 0; }
+
+.submit-btn {
+  width: 100%;
+  height: 3.72vw;
+  border: none;
+  border-radius: 0.53vw;
+  background: #eeb838;
+  box-shadow: 0 0.265vw 0 rgba(180, 130, 40, 0.3);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.06vw;
+  color: #2d2d2d;
+  cursor: pointer;
+}
+.submit-btn:active { transform: translateY(0.265vw); box-shadow: none; }
+.submit-btn:disabled { opacity: 0.6; cursor: default; }
+
+.footer-note {
+  margin: 1.2vw 0 0;
+  font-size: 0.824vw;
+  color: #2f343a;
+  text-align: center;
+}
+
+.form-error {
+  margin: 0;
+  font-size: 0.82vw;
+  color: #a3372e;
+  text-align: center;
+}

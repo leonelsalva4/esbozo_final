@@ -1,0 +1,37 @@
+{
+  "name": "esbozo-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "node scripts/build.mjs",
+    "start": "node dist/server.js",
+    "seed:sketches": "tsx src/seed-sketches.ts",
+    "test:lots": "npm run build && node --test tests/lot-flow.test.mjs",
+    "db:migrate": "node scripts/migrate.mjs",
+    "test:reviews": "npm run build && node --test tests/stage-review.test.mjs",
+    "test:provenance": "npm run build && node --test tests/provenance.test.mjs",
+    "test:coverage": "node scripts/coverage.mjs"
+  },
+  "dependencies": {
+    "argon2": "^0.41.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jpeg-js": "^0.4.4",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.13.1",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^22.9.0",
+    "@types/pg": "^8.11.10",
+    "c8": "^12.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

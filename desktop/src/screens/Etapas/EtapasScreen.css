@@ -1,0 +1,218 @@
+.etapas-main {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1414px;
+  margin: 0 auto;
+  padding: 30px 62px 12px;
+}
+.etapas-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.etapas-heading h1 {
+  margin: 20px 0 12px;
+  font: 400 44px/46px var(--es-heading);
+  color: #243944;
+}
+.etapas-heading h1 code {
+  font: 36px var(--es-mono);
+}
+.etapas-heading p {
+  margin: 0;
+  font: 15px/24px var(--es-ui);
+  color: var(--es-muted);
+}
+.etapas-heading p code {
+  font: 13px var(--es-mono);
+}
+.etapas-heading > .es-button {
+  margin-top: 20px;
+}
+.etapas-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 24px 0 20px;
+}
+.etapa-tab {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  min-height: 64px;
+  padding: 10px 15px;
+  background: #f3efe5;
+  border: 1px solid #dfd0b9;
+  border-radius: 7px;
+  color: #5e655b;
+  cursor: pointer;
+}
+.etapa-tab span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.etapa-tab strong {
+  font: 600 13px/16px var(--es-ui);
+}
+.etapa-tab small {
+  font: 11px/16px var(--es-ui);
+}
+.etapa-tab.conforme {
+  color: #3d6646;
+  background: #e8efe3;
+  border-color: #bad4b7;
+}
+.etapa-tab.no-aplica {
+  background: #eeede5;
+  color: #59635e;
+}
+.etapa-tab[aria-pressed="true"] {
+  outline: 2px solid #bd8d25;
+  outline-offset: -2px;
+}
+.etapas-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 813fr) minmax(0, 451fr);
+  gap: 26px;
+  align-items: start;
+}
+.etapas-columns > .projection-viewer--empty {
+  height: 446px;
+}
+.etapas-columns
+  > .projection-viewer:not(.projection-viewer--empty)
+  .projection-image {
+  height: 430px;
+}
+.etapas-panel {
+  box-sizing: border-box;
+  margin-top: 18px;
+  padding: 24px 18px;
+  border: 1px solid #e4d0b5;
+  border-radius: 11px;
+  background: var(--es-surface);
+  box-shadow: 0 2px 5px #8f592308;
+  min-width: 0;
+}
+.etapas-panel h2 {
+  font: 600 18px/23px var(--es-ui);
+  margin: 0 0 14px;
+}
+.etapas-panel p,
+.etapas-panel li {
+  font: 13px/21px var(--es-ui);
+  color: var(--es-muted);
+  margin: 12px 0;
+}
+.etapas-panel hr {
+  border: 0;
+  border-top: 1px solid #e4d8c5;
+  margin: 20px 0 16px;
+}
+.etapas-panel > .es-badge {
+  width: 100%;
+  box-sizing: border-box;
+}
+.etapas-panel > .es-button {
+  width: 100%;
+  margin-top: 12px;
+}
+.etapas-panel > .es-notice {
+  font: 13px/21px var(--es-ui);
+  margin: 12px 0;
+}
+.etapas-panel-heading {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  justify-content: space-between;
+}
+.etapas-panel-heading .es-badge {
+  white-space: nowrap;
+}
+.etapas-summary {
+  font: 13px/20px var(--es-ui);
+  margin: 24px 0;
+}
+.etapas-summary > div {
+  display: flex;
+  gap: 20px;
+  margin: 10px 0;
+}
+.etapas-summary dt {
+  width: 130px;
+  color: var(--es-muted);
+}
+.etapas-summary dd {
+  margin: 0;
+}
+.etapas-panel .review-candidate-panel {
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+}
+.etapas-panel .review-nonapproval {
+  font-size: 12px;
+}
+.etapas-next {
+  margin-bottom: 0 !important;
+}
+@media (max-height: 800px) and (min-width: 1001px) {
+  .etapas-main {
+    padding: 18px 35px;
+  }
+  .etapas-heading h1 {
+    font-size: 36px;
+    line-height: 40px;
+    margin-top: 12px;
+  }
+  .etapas-tabs {
+    margin-top: 18px;
+    margin-bottom: 16px;
+  }
+  .etapas-columns
+    > .projection-viewer:not(.projection-viewer--empty)
+    .projection-image {
+    height: 330px;
+  }
+}
+@media (max-width: 1000px) {
+  .etapas-main {
+    padding: 24px;
+  }
+  .etapas-heading {
+    align-items: start;
+  }
+  .etapas-heading h1 {
+    font-size: 34px;
+  }
+  .etapas-heading h1 code {
+    font-size: 26px;
+  }
+  .etapas-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .etapas-tabs {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .etapas-panel {
+    margin-top: 0;
+  }
+}
+
+.etapas-columns > .projection-viewer:not(.projection-viewer--empty) {
+  padding-bottom: 14px;
+}
+.etapa-tab.conforme[aria-pressed="true"] {
+  outline-color: #bbd3b6;
+}
+
+.etapas-columns--missing > .projection-viewer--empty {
+  height: 458px;
+}
+
+.etapas-panel li,.etapas-panel p{overflow-wrap:anywhere;min-width:0}.etapas-panel li>.es-button{display:flex;width:fit-content;max-width:100%;margin-top:8px}.etapas-panel ul{padding-left:20px;max-width:100%;box-sizing:border-box}

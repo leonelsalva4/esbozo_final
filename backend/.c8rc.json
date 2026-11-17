@@ -1,0 +1,26 @@
+{
+  "all": true,
+  "extension": [
+    ".js",
+    ".mjs",
+    ".ts"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "scripts/**/*.mjs"
+  ],
+  "exclude": [
+    "src/seed-*.ts",
+    "scripts/build.mjs",
+    "scripts/coverage.mjs"
+  ],
+  "excludeAfterRemap": true,
+  "reporter": [
+    "text",
+    "html",
+    "json",
+    "json-summary",
+    "lcov"
+  ],
+  "checkCoverage": false
+}

@@ -1,0 +1,8 @@
+# fuerza LF en todo el repo, sin importar el sistema operativo que hace
+# el commit. Sin esto, Windows guarda CRLF y cada commit de una máquina
+# distinta muestra el archivo entero como modificado.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary

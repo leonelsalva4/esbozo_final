@@ -1,0 +1,23 @@
+{
+  "name": "esbozo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Orquestador: un solo comando levanta backend + ventana de escritorio",
+  "scripts": {
+    "dev": "concurrently -k -n backend,desktop -c blue,green \"npm --prefix backend run dev\" \"npm --prefix desktop run dev\"",
+    "dev:test": "node scripts/start-test.mjs",
+    "visual:check": "node scripts/visual/catalog.mjs check",
+    "visual:scenario": "node scripts/visual/catalog.mjs show",
+    "visual:prepare": "node scripts/visual/catalog.mjs prepare",
+    "package:local": "node scripts/package-local.mjs",
+    "test:desktop": "node --import ./backend/node_modules/tsx/dist/loader.mjs --test desktop/tests/*.test.ts desktop/tests/*.test.mjs",
+    "test:backend": "npm run build --prefix backend && node --test backend/tests/*.test.mjs",
+    "test": "npm run test:backend && npm run test:desktop",
+    "package:verify": "node scripts/verify-package.mjs",
+    "test:unit": "npm run build --prefix backend && node --test backend/tests/postgres-tools.test.mjs backend/tests/technical-log.test.mjs && npm run test:desktop"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "concurrently": "^9.1.0"
+  }
+}

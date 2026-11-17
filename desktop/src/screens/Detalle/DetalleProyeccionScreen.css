@@ -1,0 +1,232 @@
+.detalle-screen,
+.etapas-screen {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--es-bg);
+  color: var(--es-text);
+  font-family: var(--es-ui);
+}
+.detalle-main {
+  width: 100%;
+  max-width: 1414px;
+  margin: 0 auto;
+  padding: 30px 62px 30px;
+  display: grid;
+  grid-template-columns: minmax(0, 813fr) minmax(0, 451fr);
+  align-items: start;
+  gap: 26px;
+  box-sizing: border-box;
+}
+.detalle-sidebar {
+  min-width: 0;
+}
+.detalle-back.es-button {
+  min-height: 36px;
+  height: 36px;
+  padding: 0 12px;
+  font-size: 12px;
+  gap: 10px;
+  align-self: flex-start;
+}
+.detalle-title-block {
+  margin-top: 18px;
+}
+.detalle-title-block h1 {
+  margin: 14px 0 10px;
+  font: 400 40px/46px var(--es-heading);
+  color: #243944;
+  white-space: nowrap;
+}
+.detalle-title-block h1 code {
+  font: 32px var(--es-mono);
+}
+.detalle-title-block p {
+  margin: 0;
+  font: 13px/20px var(--es-mono);
+  color: var(--es-muted);
+}
+.detalle-conformity {
+  margin: 14px 0 12px;
+}
+.detalle-conformity .es-badge {
+  min-height: 29px;
+  box-sizing: border-box;
+}
+.detalle-actions {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0;
+}
+.detalle-actions .es-button,
+.review-candidate-panel > .es-button {
+  width: 100%;
+  height: 44px;
+  font: 500 14px var(--es-ui);
+}
+.review-candidate-panel {
+  padding: 18px;
+  border: 1px solid #e4d0b5;
+  border-radius: 11px;
+  background: var(--es-surface);
+  box-shadow: 0 2px 5px #8f592308;
+}
+.review-candidate-panel .es-notice {
+  padding: 14px 16px;
+  gap: 14px;
+  font: 13px/20px var(--es-ui);
+}
+.review-candidate-panel .es-notice strong {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.review-candidate-panel > .es-button {
+  margin-top: 16px;
+}
+.review-candidate-meta {
+  margin: 12px 0 0;
+  font: 13px/20px var(--es-ui);
+  color: var(--es-muted);
+}
+.review-candidate-panel > .es-button:disabled {
+  background: #ede9e0;
+  border-color: #dcd3c4;
+  color: #7d7d74;
+  opacity: 1;
+}
+.review-nonapproval {
+  margin: 12px 0 0;
+  font: 13px/21px var(--es-ui);
+  color: var(--es-muted);
+}
+.review-action-error {
+  color: #9c4439;
+  font: 14px/21px var(--es-ui);
+}
+.detalle-screen .es-footer,
+.etapas-screen .es-footer {
+  padding-top: 10px;
+  padding-bottom: 9px;
+}
+.detalle-screen button:focus-visible,
+.etapas-screen button:focus-visible {
+  outline: 2px solid #398bb2;
+  outline-offset: 3px;
+}
+@media (max-height: 800px) and (min-width: 1001px) {
+  .detalle-main {
+    max-width: none;
+    padding: 18px 35px 22px;
+    grid-template-columns: minmax(0, 828fr) minmax(0, 448fr);
+    gap: 20px;
+  }
+  .detalle-back.es-button {
+    height: 40px;
+    font-size: 14px;
+  }
+  .detalle-title-block {
+    margin-top: 18px;
+  }
+  .detalle-title-block h1 {
+    font-size: 34px;
+    line-height: 39px;
+    margin: 12px 0 10px;
+  }
+  .detalle-title-block h1 code {
+    font-size: 27px;
+  }
+  .detalle-conformity {
+    margin: 12px 0 9px;
+  }
+  .detalle-actions {
+    gap: 9px;
+    margin: 9px 0;
+  }
+  .detalle-actions .es-button,
+  .review-candidate-panel > .es-button {
+    height: 40px;
+    min-height: 40px;
+  }
+  .review-candidate-panel {
+    padding: 15px;
+  }
+  .review-candidate-panel .es-notice {
+    padding: 11px 13px;
+  }
+  .review-candidate-panel > .es-button {
+    margin-top: 12px;
+  }
+  .review-nonapproval {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+@media (max-width: 1150px) {
+  .detalle-main {
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 20px;
+  }
+  .detalle-title-block h1 {
+    font-size: 32px;
+  }
+  .detalle-title-block h1 code {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1000px) {
+  .detalle-main {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 24px;
+  }
+  .detalle-title-block h1 {
+    white-space: normal;
+  }
+  .detalle-sidebar {
+    padding-top: 0;
+  }
+}
+@media (max-height: 800px) and (min-width: 1001px) {
+  .detalle-title-block {
+    margin-top: 16px;
+  }
+  .detalle-conformity {
+    margin-top: 9px;
+  }
+  .detalle-sidebar > .review-nonapproval {
+    display: none;
+  }
+  .detalle-screen .es-footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .detalle-main .projection-disclaimer {
+    min-height: 35px;
+  }
+}
+
+.candidate-dialog-details {
+  margin: 20px 0;
+  font: 13px/20px var(--es-ui);
+}
+.candidate-dialog-details > div {
+  display: flex;
+  gap: 12px;
+  margin: 9px 0;
+}
+.candidate-dialog-details dt {
+  width: 130px;
+  flex-shrink: 0;
+}
+.candidate-dialog-details dd {
+  margin: 0;
+  color: var(--es-text);
+}
+.review-dialog .es-dialog-icon:has(.lucide-triangle-alert) {
+  background: #f7e1d9;
+  color: #a64c3d;
+}
+.review-candidate-panel > .es-button:disabled {
+  margin-top: 12px;
+}

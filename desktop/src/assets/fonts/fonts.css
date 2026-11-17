@@ -1,0 +1,49 @@
+/* Fuentes auto-hospedadas (Google Fonts, licencia SIL Open Font License).
+   Archivos locales, no hay llamada de red en tiempo de ejecución: la app
+   tiene que andar sin conexión, así que nunca se enlaza a fonts.googleapis.com.
+   Inter y Source Sans 3 son "variable fonts": un solo archivo cubre todo
+   el rango de peso, por eso se declaran con un rango (100 900) en vez de
+   un @font-face por peso. */
+
+@font-face {
+  font-family: "Inter";
+  src: url("./Inter-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("./SourceSans3-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("./SourceSerif4-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("./LiberationSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("./LiberationSerif-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DejaVu Sans Mono";
+  src: url("./DejaVuSansMono.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}

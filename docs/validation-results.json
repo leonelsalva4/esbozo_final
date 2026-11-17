@@ -1,0 +1,119 @@
+{
+  "version": "ESB-ENTREGA-20261117",
+  "date": "2026-11-17",
+  "backend": {
+    "total": 74,
+    "passed": 71,
+    "failed": 0,
+    "skipped": 3
+  },
+  "desktop": {
+    "passed": 23,
+    "failed": 0
+  },
+  "images": {
+    "decoded": 91,
+    "sha256Matches": 91
+  },
+  "stages": {
+    "applicable": 24,
+    "reviewedInIsolatedFixture": 24
+  },
+  "fullFlows": 10,
+  "keyboardFlow": true,
+  "recovery": {
+    "databaseActuallyStopped": true,
+    "retrySuccessful": true,
+    "productionWrites": 0
+  },
+  "timingsMs": {
+    "lote": [
+      4049,
+      4240,
+      4140,
+      4132,
+      4073,
+      4116,
+      4156,
+      4028,
+      4047,
+      4016
+    ],
+    "detalle": [
+      315,
+      167,
+      250,
+      299,
+      301,
+      250,
+      233,
+      319,
+      317,
+      367
+    ],
+    "comparacion": [
+      115,
+      113,
+      113,
+      132,
+      115,
+      115,
+      113,
+      112,
+      130,
+      115
+    ],
+    "trazabilidad": [
+      160,
+      126,
+      131,
+      129,
+      118,
+      117,
+      127,
+      132,
+      113,
+      113
+    ]
+  },
+  "maximumRssMiB": [
+    1889.5,
+    1612.05,
+    1471.19,
+    1694.77,
+    1813.56,
+    1774.55,
+    1938.88,
+    1792.62,
+    1657.42,
+    1675.84
+  ],
+  "captureFramesPerSecond": [
+    30.6,
+    32.16,
+    32.33,
+    32.12,
+    32.34,
+    32.58,
+    31.84,
+    31.99,
+    31.94,
+    32.18
+  ],
+  "specialistSessions": 0,
+  "coverageCurrentVersion": null,
+  "coverageHistorical": {
+    "version": "ESB-VAL-20261023-R5",
+    "lines": 98.09,
+    "functions": 100,
+    "branches": 77.45
+  },
+  "limitations": [
+    "No specialist sessions or new pictorial assessments were supplied.",
+    "Reference machine has 8 GB; measured machine has 16 GB.",
+    "Memory threshold interpreted as 2048 MiB; maximum exceeds 2 GB decimal.",
+    "Historical private archives have missing files; affected full archive tests are skipped.",
+    "Offline renderer requests were restricted; the network adapter was not disabled.",
+    "Timing endpoints were instrumented and videos retained; this is not a manual frame-by-frame assessment."
+  ]
+}

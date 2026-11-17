@@ -1,0 +1,107 @@
+.trace-unavailable-screen {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--es-bg);
+  color: var(--es-text);
+  font-family: var(--es-ui);
+}
+.trace-unavailable-main {
+  box-sizing: border-box;
+  max-width: 1414px;
+  width: 100%;
+  padding: 30px 62px 24px;
+  margin: 0 auto;
+}
+.trace-unavailable-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.trace-unavailable-heading h1 {
+  margin: 20px 0 12px;
+  font: 400 44px/46px var(--es-heading);
+  color: #243944;
+}
+.trace-unavailable-heading p {
+  margin: 0;
+  color: var(--es-muted);
+  font: 15px/24px var(--es-ui);
+}
+.trace-unavailable-heading code {
+  font: 13px var(--es-mono);
+}
+.trace-unavailable-heading > .es-button {
+  margin-top: 20px;
+}
+.trace-unavailable-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 813fr) minmax(0, 451fr);
+  gap: 26px;
+  margin-top: 24px;
+  align-items: start;
+}
+.trace-unavailable-columns .projection-image {
+  height: 444px;
+}
+.trace-unavailable-columns .projection-disclaimer {
+  margin-bottom: 0;
+}
+.trace-unavailable-columns > aside {
+  border: 1px solid #e4d0b5;
+  border-radius: 11px;
+  background: var(--es-surface);
+  padding: 24px;
+}
+.trace-unavailable-columns dl {
+  font: 13px/20px var(--es-ui);
+  margin: 24px 0;
+}
+.trace-unavailable-columns dl > div {
+  display: flex;
+  gap: 12px;
+  margin: 9px 0;
+}
+.trace-unavailable-columns dt {
+  width: 130px;
+  flex-shrink: 0;
+  color: var(--es-muted);
+}
+.trace-unavailable-columns dd {
+  margin: 0;
+}
+.trace-unavailable-columns aside > .es-button {
+  width: 100%;
+  height: 44px;
+}
+.trace-unavailable-columns aside > .es-button + .es-button {
+  margin-top: 12px;
+}
+.trace-unavailable-screen .es-footer {
+  padding-top: 10px;
+  padding-bottom: 9px;
+}
+@media (max-width: 1000px) {
+  .trace-unavailable-main {
+    padding: 24px;
+  }
+  .trace-unavailable-heading {
+    flex-wrap: wrap;
+  }
+  .trace-unavailable-heading h1 {
+    font-size: 36px;
+  }
+  .trace-unavailable-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .trace-unavailable-columns .projection-image {
+    height: 350px;
+  }
+}
+.trace-unavailable-columns .es-notice {
+  line-height: 20px;
+}
+.trace-unavailable-columns .es-notice strong + div {
+  margin-top: 2px;
+}
